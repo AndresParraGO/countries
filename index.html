@@ -9,7 +9,47 @@
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+  <header class="header">
+    <div class="container">
+      <h1 class="header__title">Countries</h1>
+      <article class="dark-mode">
+        <i>i</i>
+        <span>Dark Mode</span>
+      </article>
+    </div>
+  </header>
 
+  <main class="main">
+    <div class="container">
+      <section class="search-country">
+        <article class="search__input">
+          <input type="text" placeholder="Search for a country...">
+        </article>
+        <article class="search__filter">
+          <select name="filter-country" id="filter-country">
+            <option value="africa">Africa</option>
+            <option value="america">America</option>
+            <option value="asia">Asia</option>
+            <option value="europe">Europe</option>
+            <option value="oceania">Oceania</option>
+          </select>
+        </article>
+      </section>
+
+      <section class="countries-list">
+        <article class="country">
+          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJcAAABlCAMAAAB3G4FZAAAAGFBMVEX80RbOESYAOJP/1wCkkmIAKpdcMX/RDyEMZC0dAAAAX0lEQVRoge3OwQ2DAAwAsVCg7L8xM9wvQvYEngEAAAAAAAD4uHOnuXaae6f57eTVeDVejVfj1Xg1Xo1X49V4NV7N/HeaZ6c5dvJqvBqvxqvxarwar8ar8Wq8Gq9m6+sFpC44Cg2rY2AAAAAASUVORK5CYII=" alt="" class="country__img">
+          <div class="country__content">
+            <h3 class="country__title">Colombia</h3>
+
+            <p>Population: 10.000.000</p>
+            <p>Region: America</p>
+            <p>Capital: Bogota</p>
+          </div>
+        </article>
+      </section>
+    </div>
+  </main>
 
   <script src="js/app.js"></script>
 </body>
