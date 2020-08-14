@@ -6,6 +6,7 @@
   <title>Countries</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -13,7 +14,7 @@
     <div class="container">
       <h1 class="header__title">Countries</h1>
       <article class="dark-mode">
-        <i>i</i>
+        <i class="far fa-moon"></i>
         <span>Dark Mode</span>
       </article>
     </div>
@@ -23,8 +24,10 @@
     <div class="container">
       <section class="search-country">
         <article class="search__input">
+          <i class="fas fa-search icon-search"></i>
           <input type="text" placeholder="Search for a country...">
         </article>
+
         <article class="search__filter">
           <select name="filter-country" id="filter-country">
             <option value="africa">Africa</option>
@@ -42,9 +45,9 @@
           <div class="country__content">
             <h3 class="country__title">Colombia</h3>
 
-            <p>Population: 10.000.000</p>
-            <p>Region: America</p>
-            <p>Capital: Bogota</p>
+	          <p><span class="country__category">Population:</span> 10.000.000</p>
+	          <p><span class="country__category">Region:</span> America</p>
+	          <p><span class="country__category">Capital:</span> Bogota</p>
           </div>
         </article>
       </section>

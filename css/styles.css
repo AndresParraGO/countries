@@ -25,6 +25,19 @@ body {
   font-size: var(--fontSize);
 }
 
+input,
+select {
+  font-family: inherit;
+}
+
+input:active,
+input:focus,
+select:active,
+select:focus {
+  border:none;
+  outline: none;
+}
+
 .container {
   width: 90%;
   max-width: 1200px;
@@ -48,6 +61,10 @@ body {
   padding: .5em 0;
 }
 
+.header__title {
+  font-weight: 700;
+}
+
 
 /* Main */
 
@@ -64,6 +81,36 @@ body {
   align-items: center;
 
   margin-bottom: 2em;
+}
+
+.search__input {
+  width: 60%;
+  background-color: var(--white);
+  padding: .5em 1.5em;
+  border-radius: 2px;
+  box-shadow: 0 0 5px #eee;
+  border: 1px solid #eee;
+}
+
+.search-country .icon-search {
+  margin-right: 1em;
+  color: #aaa;
+}
+
+.search__filter {
+  background-color: var(--white);
+  padding: .5em 2em;
+  border-radius: 2px;
+  box-shadow: 0 0 5px #eee;
+  border: 1px solid #eee;
+}
+
+.search__filter select {
+  border: none;
+}
+
+.search__input input {
+  border:none;
 }
 
 
@@ -100,11 +147,27 @@ body {
   margin-bottom: 1em;
 }
 
+.country__category {
+  font-weight: bold;
+}
+
+
 
 /* Mobile */
 @media screen and (max-width: 400px) {
   .countries-list {
     grid-template-columns: repeat(1, 1fr);
+  }
+
+  .search-country {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .search__input {
+    width: 100%;
+    margin-bottom: 1em;
+  }
   }
 }
 
