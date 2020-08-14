@@ -3,14 +3,16 @@
 
 const API_URL = 'https://restcountries.eu/rest/v2';
 const $containerCountries = document.getElementById('container-countries');
+const $searchInput = document.getElementById('search-input');
 
 
 
 const renderCountries = (countries) => {
-  const fragment = new DocumentFragment();
+  if(Array.isArray(countries) === true) {
+    $containerCountries.innerHTML = '';
+    const fragment = new DocumentFragment();
 
-  countries.forEach((country, i) => {
-    if(i<20) {
+    countries.forEach((country, i) => {
       const div = document.createElement('article');
       div.className = 'country';
       div.innerHTML = `
@@ -24,22 +26,33 @@ const renderCountries = (countries) => {
         </div>
       `;
       fragment.appendChild(div);
-    }
-  })
+    });
 
-  $containerCountries.appendChild(fragment);
+    $containerCountries.appendChild(fragment);
+  } else {
+    if(countries.status === 404) {
+      $containerCountries.innerHTML = '<p>No existe</p>'
+    }
+  }
 }
 
 
 
-const getAllCountries = async () => {
-  const res = await fetch(`${API_URL}/all`);
+const getAllCountries = async (country) => {
+  const fetchURL = country ? `/name/${country}` : '/all';
+  const res = await fetch(`${API_URL}${fetchURL}`);
   const countriesData = await res.json();
   renderCountries(countriesData);
 }
 
 
 
+$searchInput.addEventListener('keyup', e => {
+  getAllCountries($searchInput.value);
+});
+
+
+
 document.addEventListener('DOMContentLoaded', (e) => {
-  getAllCountries()
-})
+  getAllCountries();
+});
