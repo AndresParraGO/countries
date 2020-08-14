@@ -127,6 +127,7 @@ select:focus {
 /* Country Card */
 
 .country {
+  cursor: pointer;
   background-color: var(--white);
   border: 1px solid #eee;
   border-top: none;
@@ -134,9 +135,12 @@ select:focus {
   box-shadow: 0 0 5px #eee;
 }
 
+
+
 .country__img {
   width: 100%;
-  height: 56.25%;
+  height: 200px;
+  object-fit: cover;
 }
 
 .country__content {
@@ -168,6 +172,10 @@ select:focus {
     width: 100%;
     margin-bottom: 1em;
   }
+
+
+  .country__img {
+    height: 200px;
   }
 }
 
@@ -176,6 +184,10 @@ select:focus {
 @media screen and (min-width: 760px) {
   .countries-list {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .country__img {
+    height: 200px;
   }
 }
 
