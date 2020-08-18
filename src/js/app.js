@@ -1,10 +1,12 @@
 
 
+import '../css/styles.css';
+
 
 const API_URL = 'https://restcountries.eu/rest/v2';
 const $containerCountries = document.getElementById('container-countries');
 const $searchInput = document.getElementById('search-input');
-
+const $filterCountry = document.getElementById('filter-country');
 
 
 const renderCountries = (countries) => {
@@ -38,8 +40,8 @@ const renderCountries = (countries) => {
 
 
 
-const getAllCountries = async (country) => {
-  const fetchURL = country ? `/name/${country}` : '/all';
+const getAllCountries = async (country, region) => {
+  const fetchURL = country ? country ? `/name/${country}` : '/all' : region ? `/region/${region}` : '/all'
   const res = await fetch(`${API_URL}${fetchURL}`);
   const countriesData = await res.json();
   renderCountries(countriesData);
@@ -51,6 +53,10 @@ $searchInput.addEventListener('keyup', e => {
   getAllCountries($searchInput.value);
 });
 
+
+$filterCountry.addEventListener('change', e => {
+  getAllCountries('', e.target.value)
+});
 
 
 document.addEventListener('DOMContentLoaded', (e) => {

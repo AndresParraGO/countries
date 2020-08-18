@@ -1,0 +1,24 @@
+{
+  "name": "countries",
+  "version": "1.0.0",
+  "description": "Challenge of Countries ",
+  "main": "index.js",
+  "repository": "git@github.com:AndresParraGO/countries.git",
+  "author": "AndresParraGO <andresparragn@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "css-loader": "^4.2.1",
+    "html-webpack-plugin": "^4.3.0",
+    "style-loader": "^1.2.1",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
+  },
+  "scripts": {
+    "dev": "webpack-dev-server",
+    "build": "webpack -p"
+  },
+  "dependencies": {
+    "single-spa": "^5.5.5"
+  }
+}
