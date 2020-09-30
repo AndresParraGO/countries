@@ -1,12 +1,14 @@
 
 
 import '../css/styles.css';
+// import 'animate.css';
 
 
 const API_URL = 'https://restcountries.eu/rest/v2';
 const $containerCountries = document.getElementById('container-countries');
 const $searchInput = document.getElementById('search-input');
 const $filterCountry = document.getElementById('filter-country');
+const $btnDarkMode = document.getElementById('btn__dark--mode');
 
 
 const renderCountries = (countries) => {
@@ -39,6 +41,11 @@ const renderCountries = (countries) => {
 }
 
 
+const darkMode = () => {
+  document.body.classList.toggle('dark-mode')
+}
+
+
 
 const getAllCountries = async (country, region) => {
   const fetchURL = country ? country ? `/name/${country}` : '/all' : region ? `/region/${region}` : '/all'
@@ -53,12 +60,16 @@ $searchInput.addEventListener('keyup', e => {
   getAllCountries($searchInput.value);
 });
 
-
 $filterCountry.addEventListener('change', e => {
-  getAllCountries('', e.target.value)
+  getAllCountries('', e.target.value);
 });
 
+// Event Dark Mode
+$btnDarkMode.addEventListener('click', e => {
+  darkMode();
+});
 
 document.addEventListener('DOMContentLoaded', (e) => {
   getAllCountries();
 });
+

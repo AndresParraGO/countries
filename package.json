@@ -19,6 +19,7 @@
     "build": "webpack -p"
   },
   "dependencies": {
+    "animate.css": "^4.1.1",
     "single-spa": "^5.5.5"
   }
 }
