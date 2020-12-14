@@ -20,6 +20,7 @@
   },
   "dependencies": {
     "animate.css": "^4.1.1",
+    "ol": "^6.4.3",
     "single-spa": "^5.5.5"
   }
 }

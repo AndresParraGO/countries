@@ -98,6 +98,8 @@ select:focus {
   border-radius: 2px;
   box-shadow: 0 0 5px var(--borderColor);
   border: 1px solid var(--borderColor);
+
+  display: flex;
 }
 
 .search-country .icon-search {
@@ -120,6 +122,7 @@ select:focus {
 }
 
 .search__input input {
+  width: 100%;
   border:none;
   background-color: transparent;
   color: var(--textColor);
@@ -169,6 +172,79 @@ select:focus {
   font-weight: bold;
 }
 
+
+/* Modal Country */
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,.3);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-container {
+  width: 90%;
+  max-width: 600px;
+  padding: 1rem;
+  background-color: var(--white);
+  box-shadow: 2px 4px 6px 0 #222;
+  border-radius: 5px;
+  color: var(--textColor);
+
+  position: relative;
+}
+
+.modal-icon-close {
+  cursor: pointer;
+  display: block;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  border-radius: 50%;
+  background-color: red;
+  color: #fff;
+
+  position: absolute;
+  top: -10px;
+  right: -10px;
+}
+
+.modal-population {
+  margin-bottom: .5rem;
+}
+
+.modal-capital {
+  display: block;
+  margin-bottom:.7rem;
+  color: #888;
+}
+
+.modal-currencies,
+.modal-languages,
+.modal-borders {
+  display: flex;
+  margin-bottom: .5rem;
+}
+
+
+.modal-currency-item,
+.modal-language-item,
+.modal-borders-item {
+  list-style: none;
+  margin-right: .5rem;
+}
+
+#map {
+  width: 100%;
+  height: 300px;
+}
 
 
 /* Mobile */
